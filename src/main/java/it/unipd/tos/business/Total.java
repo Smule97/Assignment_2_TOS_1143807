@@ -15,6 +15,9 @@ public class Total implements RestaurantBill {
     public double getOrderPrice(List<MenuItem> itemsOrdered) throws RestaurantBillException {
         double toReturn = 0, minPricePizza=0, contPizze=0;
 
+        if(itemsOrdered.size() > 20)
+            throw new RestaurantBillException();
+
         for (MenuItem x : itemsOrdered) {
             if(x.getType() == "Pizze"){
                 contPizze++;
