@@ -27,6 +27,9 @@ public class Total implements RestaurantBill {
         if(contPizze > 10)
             toReturn -= minPricePizza;
 
+        if(toReturn > 100)
+            toReturn = toReturn - (toReturn/100*5);
+
         return toReturn;
     }
 }
