@@ -10,4 +10,12 @@ import java.util.List;
 
 public class Total implements RestaurantBill {
 
+    @Override
+    public double getOrderPrice(List<MenuItem> itemsOrdered) throws RestaurantBillException {
+        double toReturn = 0;
+        for (MenuItem x : itemsOrdered) {
+            toReturn += x.getPrice();
+        }
+        return toReturn;
+    }
 }
