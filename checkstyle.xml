@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
+"http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+<module name="Checker">
+
+  <!-- controllo intestazione -->
+  <module name="Header">
+  <property name="header" value="////////////////////////////////////////////////////////////////////\n// [Samuele] [Gardin] [1143807]\n////////////////////////////////////////////////////////////////////" />
+  <property name="fileExtensions" value="java" />
+  </module>
+  
+  <!-- controllo lunghezza file -->
+  <module name="FileLength">
+    <property name="max" value="1500"/>
+  </module>
+  
+  <!-- controllo assenza tabulazioni \t -->
+  <module name="FileTabCharacter">
+    <property name="eachLine" value="true"/>
+  </module>
+  
+  <!-- ************** -->
+  <module name="TreeWalker">	
+  	<!-- espressioni booleane -->
+  	<module name="BooleanExpressionComplexity"/>
+  	
+  	<!-- controllo cicli -->
+    <module name="CyclomaticComplexity">
+      <property name="max" value="30"/>
+    </module>
+    
+    <!-- controllo lunghezza riga -->
+    <module name="LineLength">
+      <property name="max" value="120"/>
+    </module>
+    
+    <!-- controllo lunghezza metodo -->
+    <module name="MethodLength">
+      <property name="tokens" value="METHOD_DEF"/>
+      <property name="max" value="60"/>
+    </module>
+    
+    <!-- controllo blocchi vuoti catch -->
+    <module name="EmptyCatchBlock">
+      <property name="commentFormat" value="This is expected"/>
+    </module>
+    
+    <!-- controllo assenza import * -->
+    <module name="AvoidStarImport">
+  	  <property name="excludes" value="java.io,java.net,java.lang.Math"/>
+  	  <property name="allowClassImports" value="false"/>
+  	  <property name="allowStaticMemberImports" value="false"/>
+    </module>
+    
+    <!-- controllo import illegali -->
+    <module name="IllegalImport">
+      <property name="illegalPkgs" value="java.io, java.sql"/>
+    </module>
+    
+   	<!-- controllo parentesi nei blocchi-->
+    <module name="NeedBraces">
+      <property name="tokens" value="LITERAL_IF, LITERAL_ELSE"/>
+    </module>
+  </module>
+</module>
